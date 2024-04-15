@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkweb_builder=self.webpackChunkweb_builder||[]).push([[722],{14544:function(e,l,t){t.r(l);var u=t(96540),n=t(37440),r=t(68154);l.default=()=>u.createElement(n.MP,null,u.createElement(r.m,{title:"Editor"}),u.createElement(n.KE,null))}}]);
+//# sourceMappingURL=component---src-pages-admin-editor-tsx-db34dd8fd42f9ec6073b.js.map

@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkweb_builder=self.webpackChunkweb_builder||[]).push([[960],{59786:function(e,t,l){l.r(t);var n=l(96540),u=l(37440),r=l(68154);t.default=()=>n.createElement(u.MP,null,n.createElement(r.m,{title:"App Settings"}),n.createElement(u.$9,null))}}]);
+//# sourceMappingURL=component---src-pages-admin-app-settings-tsx-9a9212c6a4b1e4efe318.js.map

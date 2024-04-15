@@ -4,6 +4,10 @@
   "description": "A simple starter to get started quickly with React Bricks and Gatsby",
   "version": "1.3.6",
   "author": "",
+  "engines": {
+  "node": "20.12.2",
+  "yarn": "1.22.19"
+  },
   "dependencies": {
     "@headlessui/react": "^1.7.17",
     "bluebird": "^3.7.2",

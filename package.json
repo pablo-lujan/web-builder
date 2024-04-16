@@ -8,6 +8,9 @@
     "node": "20.12.2",
     "yarn": "1.22.19"
   },
+  "workspaces": [
+  "packages/*"
+  ],
   "dependencies": {
     "@babel/core": "^7.24.4",
     "@headlessui/react": "^1.7.17",
@@ -31,7 +34,7 @@
     "prism-theme-night-owl": "^1.4.0",
     "prismjs": "^1.29.0",
     "prop-types": "^15.8.1",
-    "react": "^18.2.0",
+    "react": "0.0.0-experimental-c8b778b7f-20220825",
     "react-bricks": "^4.3.0",
     "react-dom": "^18.2.0",
     "react-helmet": "^6.1.0",
@@ -46,11 +49,15 @@
     "@types/react": "^18.0.29",
     "@types/react-helmet": "^6.1.6",
     "@types/react-slick": "^0.23.13",
+    "@typescript-eslint/eslint-plugin": "^4.0.0",
+    "@typescript-eslint/parser": "^4.0.0",
     "autoprefixer": "^10.4.14",
     "concurrently": "^7.6.0",
+    "eslint": "^9.0.0",
     "postcss": "^8.4.21",
     "prettier": "^2.8.7",
-    "tailwindcss": "^3.4.3"
+    "tailwindcss": "^3.4.3",
+    "typescript": "^5.4.5"
   },
   "keywords": [
     "gatsby",

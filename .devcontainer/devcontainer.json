@@ -13,7 +13,7 @@
         "terminal.integrated.shell.linux": "/bin/bash"
     },
     "forwardPorts": [8080],
-    "postCreateCommand": "yarn install",
+    "postCreateCommand": "yarn start",
     "extensions": [
         "dbaeumer.vscode-eslint"
     ],

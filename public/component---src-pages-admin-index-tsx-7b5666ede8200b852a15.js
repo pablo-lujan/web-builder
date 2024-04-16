@@ -1,2 +1,0 @@
-"use strict";(self.webpackChunkweb_builder=self.webpackChunkweb_builder||[]).push([[71],{73415:function(e,t,l){l.r(t);var n=l(96540),u=l(37440),a=l(68154);t.default=()=>n.createElement(u.MP,{isLogin:!0},n.createElement(a.m,{title:"Login"}),n.createElement(u.az,null))}}]);
-//# sourceMappingURL=component---src-pages-admin-index-tsx-7b5666ede8200b852a15.js.map

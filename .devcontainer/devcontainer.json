@@ -13,7 +13,7 @@
         "terminal.integrated.shell.linux": "/bin/bash"
     },
     "forwardPorts": [8080],
-    "postCreateCommand": "yarn start",
+    "postCreateCommand": "bash create-env-dev.sh && bash create-env-pro.sh && yarn install",
     "extensions": [
         "dbaeumer.vscode-eslint"
     ],

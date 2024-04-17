@@ -1,22 +1,26 @@
-# Project Name
+# Web Builder  
 
-This is a template website that can be hosted on Github Pages, Netfily, Clodufare Pages or any other static web site hosting you prefer that uses Gatsby for the generation of the static web site and Reactbricks as a visual CMS with drag and drop functionalities that makes building a new website with little technical configuration and allows non-technical users to easily create pages without the need of messing with the code underneat.   
-The project is based on the template project of Reactbricks.  
+Here you can find the code for a website that you can edit directly from any web browser with a visual drag and drop editor.  
 
-## Features
-- Drag and drop editor for pages.  
-- Can be hosted as a Static Web Site.  
+We use Gatsby for the generation of the static web site and Reactbricks as a visual CMS with drag and drop functionalities that makes building a new website with little technical configuration and allows non-technical users to easily create pages without the need of messing with the code underneat.  
 
-## Prerequisites
-Before you begin, ensure you meet the following requirements:
+## Features  
+- Drag and drop editor for pages. 
+- Host it whenever you want, we recommend services with a free tier like Github Pages, Netfily or Clodufare Pages.  
+- Create blogs entries as Markdown files.  
+- Clone it, launch it and start developing your site in five minutes
+- Get new features with one click
 
-. Node.js 20.12.2
-. Yarn 1.22.19
+## Prerequisites  
+Before you begin, ensure you meet the following requirements:  
 
-## Installation
+- Node.js 20.12.2  
+- Yarn 1.22.19  
+
+## Installation  
 Steps to install the project:  
 
-> We recommend using Github Codespaces as it automactily installs all the dependencies and you can start developing inmeadiatly.
+> We recommend using Github Codespaces as it automaticlly installs all the dependencies and you can start developing inmeadiatly.
 
 If you want to install locally:   
 
@@ -26,8 +30,8 @@ cd web-builder
 yarn install
 ```
 
-## Configuration
-To configure the project and use Reactbricks you need to create a new account, create a new app and look for the section API Keys where you want to save AppId and ApiKey.
+## Configuration  
+To configure the project and use Reactbricks you need to create a new account, create a new app and look for the section API Keys where you want to save AppId and ApiKey.  
 
 If you are using Github Codespaces add four secrets to the Codespace as follows:  
 . API_KEY_DEV: ApiKey  
@@ -36,28 +40,28 @@ If you are using Github Codespaces add four secrets to the Codespace as follows:
 . GATSBY_APP_ID_PRO: AppId  
 
 If you are running locally create two files: 
-.env.development and .env.production. Inside each you fill the Api keys
+.env.development and .env.production.  
+Inside each you fill the Api keys  
 ```
 API_KEY=ApiKey
 GATSBY_APP_ID=AppId
 ```
 
-
 ## Usage
-How to run the project locally:
+Start developing with one command
 ```
 yarn develop
 ```
 ## Instructions for building and deploying:
 
-For building locally:
+### For building locally:
 
 ```
 yarn build
 yarn serve
 ```
 
-For building using Cloudfare Pages:
+### For building using Cloudfare Pages:
 
 The important configuration to be changed is use the following build command:
 ```

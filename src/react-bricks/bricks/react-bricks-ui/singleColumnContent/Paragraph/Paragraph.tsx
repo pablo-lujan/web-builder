@@ -12,18 +12,18 @@ import {
 } from '../../LayoutSideProps'
 
 interface ParagraphProps extends LayoutProps {  
-  text?: string; 
-  editable?: boolean;
+  text: string; 
+  editable: boolean;
 }
 
 const Paragraph: types.Brick<ParagraphProps> = ({
-  text,
   backgroundColor,
   borderTop,
   borderBottom,
   paddingTop,
   paddingBottom,
   width,
+  text,
   editable,
 }) => {
   return (
@@ -32,12 +32,13 @@ const Paragraph: types.Brick<ParagraphProps> = ({
       borderTop={borderTop}
       borderBottom={borderBottom}
     >
+      
       <Container
         size={width}
         paddingTop={paddingTop}
         paddingBottom={paddingBottom}
       >
-        {editable ? (
+       {editable ? (
           <RichText
             propName="text"
             placeholder="Paragraph..."
@@ -56,7 +57,7 @@ const Paragraph: types.Brick<ParagraphProps> = ({
               types.RichTextFeatures.Highlight,
               types.RichTextFeatures.UnorderedList,
               types.RichTextFeatures.OrderedList,
-            ]}
+            ]} 
             renderH2={({ children }) => {
               return (
                 <h2 className="text-2xl leading-7 font-bold text-gray-800 dark:text-white mt-6 mb-2">
@@ -90,7 +91,7 @@ const Paragraph: types.Brick<ParagraphProps> = ({
               >
                 {children}
               </Link>
-            )}
+            )} 
           />
         ) : (
           <div
@@ -117,8 +118,8 @@ Paragraph.schema = {
     width: 'small',
     paddingTop: '0',
     paddingBottom: '0',
-    editable : true,
-    text: ''
+    editable : false,
+    text: '',
   }),
   sideEditProps: [
     neutralBackgroundSideGroup,

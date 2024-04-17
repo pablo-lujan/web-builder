@@ -14,7 +14,6 @@ const BlogPostTemplate = ({ data }) => {
     return <div>No blog post found!</div>;
   }
   const { frontmatter, html } = markdownRemark;
-  console.log(frontmatter);
 
   return (
     <article>

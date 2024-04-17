@@ -40,7 +40,6 @@ const Title: types.Brick<TitleProps> = ({
   paddingBottom  = sectionDefaults.paddingBottom,
   width = 'medium',
 }) => {
-  console.log(title, subtitle,backgroundColor,borderTop, borderBottom, width,paddingTop,paddingBottom)
   return (
     <Section
       backgroundColor={backgroundColor}

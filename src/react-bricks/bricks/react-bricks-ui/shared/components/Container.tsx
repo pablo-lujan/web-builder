@@ -65,7 +65,7 @@ export interface ContainerProps {
   paddingTop?: Padding
   paddingBottom?: Padding
   className?: string
-  children?: React.ReactNode
+  children?: React.ReactNode 
 }
 
 const Container: React.FC<ContainerProps> = ({
@@ -75,6 +75,7 @@ const Container: React.FC<ContainerProps> = ({
   className,
   children,
 }) => {
+  console.log(children)
   return (
     <div
       className={classNames(

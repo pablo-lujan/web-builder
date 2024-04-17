@@ -13,7 +13,7 @@ interface SectionProps {
   backgroundColor?: { color: string; className: string }
   backgroundImage?: types.IImageSource
   backgroundImageDark?: types.IImageSource
-  borderTop?: Border
+  borderTop?: Border 
   borderBottom?: Border
   className?: string
   children?: React.ReactNode
@@ -30,6 +30,7 @@ const Section: React.FC<SectionProps> = ({
   noOverflowX = false,
   children,
 }) => {
+  console.log(children)
   const bgColor = backgroundColor.className
   const { isAdmin } = useAdminContext()
   const { isDarkColorMode, toggleColorMode } = useReactBricksContext()

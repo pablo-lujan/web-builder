@@ -12,6 +12,7 @@ RUN apt-get update && apt-get install -y \
 RUN apt-get update && apt-get install -y sudo
 
 RUN echo "node:node"|chpasswd
+RUN echo "root:root"|chpasswd
 # Avoid running as root permanently
 USER node
 

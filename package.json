@@ -9,7 +9,7 @@
     "yarn": "1.22.19"
   },
   "workspaces": [
-  "packages/*"
+    "packages/*"
   ],
   "dependencies": {
     "@babel/core": "^7.24.4",
@@ -26,6 +26,8 @@
     "gatsby-plugin-offline": "^6.8.0",
     "gatsby-plugin-postcss": "^6.8.0",
     "gatsby-plugin-react-helmet": "^6.8.0",
+    "gatsby-source-filesystem": "^5.13.1",
+    "gatsby-transformer-remark": "^6.13.1",
     "graphql": "^16.8.1",
     "joi": "^17.12.3",
     "jquery": "^3.7.1",

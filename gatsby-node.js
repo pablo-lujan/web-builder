@@ -6,8 +6,43 @@ const bluebird = require('bluebird')
 const fetchPages = require('react-bricks/frontend').fetchPages
 const fetchPage = require('react-bricks/frontend').fetchPage
 const fetchTags = require('react-bricks/frontend').fetchTags
+const path = require("path")
+const { graphql } = require("gatsby")
 
-exports.createPages = async ({ actions: { createPage } }) => {
+exports.createPages = async ({ graphql, actions }) => {
+  const { createPage } = actions;
+
+  // Correct usage of GraphQL to query data
+  const result = await graphql(`
+    {
+      allMarkdownRemark {
+        edges {
+          node {
+            frontmatter {
+              slug
+            }
+          }
+        }
+      }
+    }
+  `);
+
+  if (result.errors) {
+    reporter.panicOnBuild('Error while running GraphQL query.');
+    return;
+  }
+
+  // Use the result data to create pages
+  result.data.allMarkdownRemark.edges.forEach(({ node }) => {
+    createPage({
+      path: node.frontmatter.slug, // Use the slug from the frontmatter as the path
+      component: path.resolve("./src/templates/blogPostTemplate.js"), // Path to template for blog posts
+      context: {
+        slug: node.frontmatter.slug,
+      },
+    });
+  });
+
   const appId = process.env.GATSBY_APP_ID
   const apiKey = process.env.API_KEY
   const publicEnvironment = process.env.GATSBY_PUBLIC_ENVIRONMENT

@@ -11,6 +11,7 @@ RUN apt-get update && apt-get install -y \
 # [Optional] Uncomment this section to install additional packages.
 RUN apt-get update && apt-get install -y sudo
 
+RUN echo "node:node"|chpasswd
 # Avoid running as root permanently
 USER node
 

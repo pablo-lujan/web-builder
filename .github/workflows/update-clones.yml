@@ -14,6 +14,8 @@ jobs:
 
       - name: Push updates to cloned repositories
         uses: repo-sync/github-sync@v2
+        env:
+          GITHUB_TOKEN: ${{ secrets.PAT }}
         with:
           source_repo: "https://github.com/pablo-lujan/web-builder.git"
           source_branch: "react-bricks"

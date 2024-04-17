@@ -20,8 +20,8 @@ jobs:
           source_repo: "https://github.com/pablo-lujan/web-builder.git"
           source_branch: "react-bricks"
           destination_branch: "react-bricks"
-          env:
-            GITHUB_TOKEN: ${{ secrets.PAT }}   
+        env:
+          GITHUB_TOKEN: ${{ secrets.PAT }}   
 
 permissions:
   contents: read

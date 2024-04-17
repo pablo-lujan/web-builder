@@ -1,15 +1,15 @@
-# Web Builder  
+# Web Builder
 
-Here you can find the code for a website that you can edit directly from any web browser with a visual drag and drop editor.  
+This project leverages Gatsby for static site generation and React Bricks for intuitive visual content management, providing an ideal solution for building customizable websites with minimal coding. It's designed to empower both developers and non-technical users with drag-and-drop functionalities, making website creation accessible to everyone.
 
-We use Gatsby for the generation of the static web site and Reactbricks as a visual CMS with drag and drop functionalities that makes building a new website with little technical configuration and allows non-technical users to easily create pages without the need of messing with the code underneat.  
+## Features
 
-## Features  
-- Drag and drop editor for pages. 
-- Host it whenever you want, we recommend services with a free tier like Github Pages, Netfily or Clodufare Pages.  
-- Create blogs entries as Markdown files.  
-- Clone it, launch it and start developing your site in five minutes
-- Get new features with one click
+- **Drag and Drop Editor**: Simplify page creation with a user-friendly interface.
+- **Flexible Hosting Options**: Compatible with platforms offering free tiers like GitHub Pages, Netlify, and Cloudflare Pages.
+- **Markdown Support**: Manage blog content efficiently using Markdown.
+- **Quick Setup**: Get started with your site development in just five minutes.
+- **Automatic Updates**: Incorporate the latest features with a single click.
+
 
 ## Prerequisites  
 Before you begin, ensure you meet the following requirements:  
@@ -21,6 +21,7 @@ Before you begin, ensure you meet the following requirements:
 Steps to install the project:  
 
 > We recommend using Github Codespaces as it automaticlly installs all the dependencies and you can start developing inmeadiatly.
+> Just create a repository with this as a template and lauch a Codespace. The repo includes the docker configuration to start developing with only a click.
 
 If you want to install locally:   
 
@@ -31,7 +32,13 @@ yarn install
 ```
 
 ## Configuration  
-To configure the project and use Reactbricks you need to create a new account, create a new app and look for the section API Keys where you want to save AppId and ApiKey.  
+To configure the project and use Reactbricks you need to create a new account at 
+
+> https://reactbricks.com/sign-up
+
+Create a new app and look for the section API Keys where you want to save AppId and ApiKey.  
+
+The free version only allows for one enviroment, so the PRO and DEV keys are the same if you use the free trial.
 
 If you are using Github Codespaces add four secrets to the Codespace as follows:  
 - API_KEY_DEV: ApiKey  
@@ -57,6 +64,7 @@ Once you finish developing save all your progress to your repo using:
 ```
 ./reload_site.sh
 ```
+This script just pulls from your repo, create an automated commit message and pushes it to your repo.
 
 ## Instructions for building and deploying:
 

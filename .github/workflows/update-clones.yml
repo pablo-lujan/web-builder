@@ -19,7 +19,7 @@ jobs:
         if: github.repository != env.SOURCE_REPOSITORY
         with:
           github_token: ${{ secrets.PAT }}
-          source_repo_path: ${{ env.SOURCE_REPOSITORY }}
-          upstream_branch: ${{ env.SOURCE_BRANCH }}
+          source_repo_path: "pablo-lujan/web-builder"
+          upstream_branch: "react-bricks"
           pr_title: "[actions-template-sync] Upstream template update"
           pr_commit_msg: "chore(template): upstream template update"

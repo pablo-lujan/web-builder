@@ -34,10 +34,10 @@ yarn install
 To configure the project and use Reactbricks you need to create a new account, create a new app and look for the section API Keys where you want to save AppId and ApiKey.  
 
 If you are using Github Codespaces add four secrets to the Codespace as follows:  
-. API_KEY_DEV: ApiKey  
-. API_KEY_PRO: ApiKey  
-. GATSBY_APP_ID_DEV: AppId  
-. GATSBY_APP_ID_PRO: AppId  
+- API_KEY_DEV: ApiKey  
+- API_KEY_PRO: ApiKey  
+- GATSBY_APP_ID_DEV: AppId  
+- GATSBY_APP_ID_PRO: AppId  
 
 If you are running locally create two files: 
 .env.development and .env.production.  
@@ -52,6 +52,12 @@ Start developing with one command
 ```
 yarn develop
 ```
+
+Once you finish developing save all your progress to your repo using:
+```
+./reload_site.sh
+```
+
 ## Instructions for building and deploying:
 
 ### For building locally:
@@ -90,3 +96,9 @@ tbd
 
 We are really grateful to Reactbricks as it allows to try it amazing editor and have many resources for its use.
 
+## Roadmap
+- Sync new features using Github Actions
+- Solve the rebuild problem with Api Keys
+- Add new CMS and backend support
+- Add external storage
+- Make a blog landing page

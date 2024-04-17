@@ -11,6 +11,8 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
+        env:
+          GITHUB_TOKEN: ${{ secrets.PAT }}
 
       - name: Push updates to cloned repositories
         uses: repo-sync/github-sync@v2

@@ -14,10 +14,12 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Push updates to cloned repositories
-        uses: repo-sync/github-sync@v2
+      - name: actions-template-sync
+        uses: AndreasAugustin/actions-template-sync@v1.1.8
+        if: github.repository != env.SOURCE_REPOSITORY
         with:
-          GITHUB_TOKEN: ${{ secrets. PAT }}  
-          source_repo: "https://github.com/pablo-lujan/web-builder.git"
-          source_branch: "react-bricks"
-          destination_branch: "react-bricks"
+          github_token: ${{ secrets.PAT }}
+          source_repo_path: ${{ env.SOURCE_REPOSITORY }}
+          upstream_branch: ${{ env.SOURCE_BRANCH }}
+          pr_title: "[actions-template-sync] Upstream template update"
+          pr_commit_msg: "chore(template): upstream template update"

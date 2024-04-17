@@ -102,3 +102,4 @@ We are really grateful to Reactbricks as it allows to try it amazing editor and 
 - Add new CMS and backend support
 - Add external storage
 - Make a blog landing page
+- Automate config 

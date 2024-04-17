@@ -9,7 +9,7 @@ jobs:
   update-clones:
     runs-on: ubuntu-latest
     env:
-      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  
+      GITHUB_TOKEN: ${{ secrets.PAT }}  
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
@@ -17,13 +17,7 @@ jobs:
       - name: Push updates to cloned repositories
         uses: repo-sync/github-sync@v2
         with:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  
+          GITHUB_TOKEN: ${{ secrets.PAT }}  
           source_repo: "https://github.com/pablo-lujan/web-builder.git"
           source_branch: "react-bricks"
           destination_branch: "react-bricks"
- 
-
-permissions:
-  contents: read
-  issues: write
-  pull-requests: write          

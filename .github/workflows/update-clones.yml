@@ -3,7 +3,7 @@ name: Update Clones
 on:
   push:
     branches:
-      - main
+      - react-bricks
 
 jobs:
   update-clones:

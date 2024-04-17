@@ -19,3 +19,7 @@ jobs:
           source_branch: "react-bricks"
           destination_branch: "react-bricks"
           github_token: ${{ secrets.PAT }}
+permissions:
+  contents: read
+  issues: write
+  pull-requests: write          

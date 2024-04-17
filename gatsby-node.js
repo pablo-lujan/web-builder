@@ -8,24 +8,37 @@ const fetchPage = require('react-bricks/frontend').fetchPage
 const fetchTags = require('react-bricks/frontend').fetchTags
 const path = require("path")
 const { graphql } = require("gatsby")
+const { createFilePath } = require('gatsby-source-filesystem');
 
+exports.onCreateNode = ({ node, actions, getNode }) => {
+  const { createNodeField } = actions;
+  if (node.internal.type === "MarkdownRemark") {
+    const slug = createFilePath({ node, getNode, basePath: "blog" });
+    console.log(`Creating slug: ${slug} for node ${node.id}`);  // Log the slug and node id
+    createNodeField({
+      node,
+      name: 'slug',
+      value: slug, 
+    });
+  }
+};
 exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions;
 
   // Correct usage of GraphQL to query data
   const result = await graphql(`
-    {
-      allMarkdownRemark {
-        edges {
-          node {
-            frontmatter {
-              slug
-            }
+  {
+    allMarkdownRemark {
+      edges {
+        node {
+          fields {
+            slug
           }
         }
       }
     }
-  `);
+  }
+`);
 
   if (result.errors) {
     reporter.panicOnBuild('Error while running GraphQL query.');
@@ -33,12 +46,13 @@ exports.createPages = async ({ graphql, actions }) => {
   }
 
   // Use the result data to create pages
+  console.log(JSON.stringify(result.data, null, 2));
   result.data.allMarkdownRemark.edges.forEach(({ node }) => {
     createPage({
-      path: node.frontmatter.slug, // Use the slug from the frontmatter as the path
-      component: path.resolve("./src/templates/blogPostTemplate.js"), // Path to template for blog posts
+      path: node.fields.slug, // Use the slug from the frontmatter as the path
+      component: path.resolve("./src/templates/blogPostTemplate.jsx"), // Path to template for blog posts
       context: {
-        slug: node.frontmatter.slug,
+        slug: node.fields.slug
       },
     });
   });

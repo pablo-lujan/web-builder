@@ -4,12 +4,16 @@ import { Text } from 'react-bricks/frontend'
 import { textColors } from '../../colors'
 
 interface TitleSubtitleProps {
+  title?: string
+  subtitle?: string
   bigCentered?: boolean
   extraboldTitle?: boolean
   className?: string
 }
 
 const TitleSubtitle: React.FC<TitleSubtitleProps> = ({
+  title= '',
+  subtitle= '',
   bigCentered = false,
   extraboldTitle = false,
   className = '',

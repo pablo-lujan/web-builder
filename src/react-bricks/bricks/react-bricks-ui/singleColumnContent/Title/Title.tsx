@@ -13,6 +13,8 @@ import Section, { Border } from '../../shared/components/Section'
 import TitleSubtitle from '../../shared/components/TitleSubtitle'
 
 interface TitleProps extends LayoutProps {
+  title: string; // Added dynamic title
+  subtitle: string; // Added dynamic subtitle
   backgroundColor: { color: string; className: string }
   backgroundImage?: types.IImageSource
   backgroundImageDark?: types.IImageSource
@@ -26,6 +28,8 @@ interface TitleProps extends LayoutProps {
 }
 
 const Title: types.Brick<TitleProps> = ({
+  title,
+  subtitle,
   bigCentered,
   extraboldTitle,
   backgroundColor,
@@ -35,6 +39,7 @@ const Title: types.Brick<TitleProps> = ({
   paddingBottom,
   width,
 }) => {
+  console.log(title, subtitle,backgroundColor,borderTop, borderBottom, width,paddingTop,paddingBottom)
   return (
     <Section
       backgroundColor={backgroundColor}
@@ -47,6 +52,8 @@ const Title: types.Brick<TitleProps> = ({
         paddingBottom={paddingBottom}
       >
         <TitleSubtitle
+          title={title} // Pass title
+          subtitle={subtitle} // Pass subtitle
           bigCentered={bigCentered}
           extraboldTitle={extraboldTitle}
         />
@@ -54,6 +61,7 @@ const Title: types.Brick<TitleProps> = ({
     </Section>
   )
 }
+
 
 Title.schema = {
   name: blockNames.Title,

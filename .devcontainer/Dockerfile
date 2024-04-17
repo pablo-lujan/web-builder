@@ -9,7 +9,7 @@ RUN apt-get update && apt-get install -y \
     rm -rf /var/lib/apt/lists/*
 
 # [Optional] Uncomment this section to install additional packages.
-# RUN apt-get update && apt-get install -y <your-package-list-here>
+RUN apt-get update && apt-get install -y sudo
 
 # Avoid running as root permanently
 USER node

@@ -1,1 +1,1 @@
-{"componentChunkName":"component---src-templates-blog-post-template-js","path":"/my-first-blog-post/","result":{"data":{"markdownRemark":{"html":"<p>This is my first blog post content here!</p>","frontmatter":{"title":"My First Blog Post"}}},"pageContext":{"slug":"/my-first-blog-post"}},"staticQueryHashes":[],"slicesMap":{}}
+{"componentChunkName":"component---src-templates-blog-post-template-jsx","path":"/my-first-blog-post/","result":{"data":{"markdownRemark":null},"pageContext":{"slug":"/my-first-blog-post"}},"staticQueryHashes":[],"slicesMap":{}}

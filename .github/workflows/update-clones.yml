@@ -23,6 +23,11 @@ jobs:
           source_branch: "react-bricks"
           destination_branch: "react-bricks"
           github_token: ${{ secrets.PAT }}
+      - name: Print environment variables
+        run: |
+          echo "Listing environment variables..."
+          printenv          
+
 permissions:
   contents: read
   issues: write

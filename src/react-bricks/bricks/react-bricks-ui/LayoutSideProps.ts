@@ -156,14 +156,20 @@ interface SectionDefaults {
   paddingBottom: Padding
   borderTop: Border
   borderBottom: Border
+  width: Size
+  bigCentered: Boolean
+  extraboldTitle: Boolean
 }
 
 export const sectionDefaults: SectionDefaults = {
-  backgroundColor: bgColors.WHITE.value,
-  paddingTop: '16',
-  paddingBottom: '16',
+  backgroundColor: bgColors.DARK_GRAY.value,
+  paddingTop: '8',
+  paddingBottom: '8',
   borderTop: 'none',
   borderBottom: 'none',
+  width: 'medium',
+  bigCentered: true,
+  extraboldTitle: true,
 }
 
 export const containerSizeEditProps: types.ISideEditProp = {

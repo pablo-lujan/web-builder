@@ -12,6 +12,7 @@ import Container, { Padding, Size } from '../../shared/components/Container'
 import Section, { Border } from '../../shared/components/Section'
 import TitleSubtitle from '../../shared/components/TitleSubtitle'
 
+
 interface TitleProps extends LayoutProps {
   title: string; // Added dynamic title
   subtitle: string; // Added dynamic subtitle
@@ -28,16 +29,16 @@ interface TitleProps extends LayoutProps {
 }
 
 const Title: types.Brick<TitleProps> = ({
-  title,
-  subtitle,
-  bigCentered,
-  extraboldTitle,
-  backgroundColor,
-  borderTop,
-  borderBottom,
-  paddingTop,
-  paddingBottom,
-  width,
+  title = 'Default Title',
+  subtitle = 'Default Subtitle',
+  bigCentered = false,
+  extraboldTitle = false,
+  backgroundColor = sectionDefaults.backgroundColor,
+  borderTop =  sectionDefaults.borderTop,
+  borderBottom =  sectionDefaults.borderBottom,
+  paddingTop = sectionDefaults.paddingTop,
+  paddingBottom  = sectionDefaults.paddingBottom,
+  width = 'medium',
 }) => {
   console.log(title, subtitle,backgroundColor,borderTop, borderBottom, width,paddingTop,paddingBottom)
   return (

@@ -11,15 +11,20 @@ import {
   sectionDefaults,
 } from '../../LayoutSideProps'
 
-interface ParagraphProps extends LayoutProps {}
+interface ParagraphProps extends LayoutProps {  
+  text?: string; 
+  editable?: boolean;
+}
 
 const Paragraph: types.Brick<ParagraphProps> = ({
+  text,
   backgroundColor,
   borderTop,
   borderBottom,
   paddingTop,
   paddingBottom,
   width,
+  editable,
 }) => {
   return (
     <Section
@@ -32,60 +37,67 @@ const Paragraph: types.Brick<ParagraphProps> = ({
         paddingTop={paddingTop}
         paddingBottom={paddingBottom}
       >
-        <RichText
-          propName="text"
-          placeholder="Paragraph..."
-          renderBlock={({ children }) => (
-            <p className="text-base leading-7 mt-6 mb-6 text-gray-800 dark:text-gray-100">
-              {children}
-            </p>
-          )}
-          allowedFeatures={[
-            types.RichTextFeatures.Heading2,
-            types.RichTextFeatures.Heading3,
-            types.RichTextFeatures.Bold,
-            types.RichTextFeatures.Italic,
-            types.RichTextFeatures.Link,
-            types.RichTextFeatures.Code,
-            types.RichTextFeatures.Highlight,
-            types.RichTextFeatures.UnorderedList,
-            types.RichTextFeatures.OrderedList,
-          ]}
-          renderH2={({ children }) => {
-            return (
-              <h2 className="text-2xl leading-7 font-bold text-gray-800 dark:text-white mt-6 mb-2">
+        {editable ? (
+          <RichText
+            propName="text"
+            placeholder="Paragraph..."
+            renderBlock={({ children }) => (
+              <p className="text-base leading-7 mt-6 mb-6 text-gray-800 dark:text-gray-100">
                 {children}
-              </h2>
-            )
-          }}
-          renderH3={({ children }) => {
-            return (
-              <h3 className="text-xl font-bold text-gray-800 dark:text-white mt-6 mb-2">
+              </p>
+            )}
+            allowedFeatures={[
+              types.RichTextFeatures.Heading2,
+              types.RichTextFeatures.Heading3,
+              types.RichTextFeatures.Bold,
+              types.RichTextFeatures.Italic,
+              types.RichTextFeatures.Link,
+              types.RichTextFeatures.Code,
+              types.RichTextFeatures.Highlight,
+              types.RichTextFeatures.UnorderedList,
+              types.RichTextFeatures.OrderedList,
+            ]}
+            renderH2={({ children }) => {
+              return (
+                <h2 className="text-2xl leading-7 font-bold text-gray-800 dark:text-white mt-6 mb-2">
+                  {children}
+                </h2>
+              )
+            }}
+            renderH3={({ children }) => {
+              return (
+                <h3 className="text-xl font-bold text-gray-800 dark:text-white mt-6 mb-2">
+                  {children}
+                </h3>
+              )
+            }}
+            renderUL={({ children }) => (
+              <ul className="list-disc list-outside ml-5 mt-4 text-gray-800 dark:text-gray-200">
                 {children}
-              </h3>
-            )
-          }}
-          renderUL={({ children }) => (
-            <ul className="list-disc list-outside ml-5 mt-4 text-gray-800 dark:text-gray-200">
-              {children}
-            </ul>
-          )}
-          renderOL={({ children }) => (
-            <ol className="list-decimal list-outside ml-5 mt-4 text-gray-800 dark:text-gray-200">
-              {children}
-            </ol>
-          )}
-          renderLink={({ children, href, target, rel }) => (
-            <Link
-              href={href}
-              target={target}
-              rel={rel}
-              className="inline-block text-sky-500 hover:text-sky-600 font-bold hover:-translate-y-px hover:underline transition-all ease-out duration-150"
-            >
-              {children}
-            </Link>
-          )}
-        />
+              </ul>
+            )}
+            renderOL={({ children }) => (
+              <ol className="list-decimal list-outside ml-5 mt-4 text-gray-800 dark:text-gray-200">
+                {children}
+              </ol>
+            )}
+            renderLink={({ children, href, target, rel }) => (
+              <Link
+                href={href}
+                target={target}
+                rel={rel}
+                className="inline-block text-sky-500 hover:text-sky-600 font-bold hover:-translate-y-px hover:underline transition-all ease-out duration-150"
+              >
+                {children}
+              </Link>
+            )}
+          />
+        ) : (
+          <div
+            className="text-base leading-7 mt-6 mb-6 text-gray-800 dark:text-gray-100 text-center" 
+            dangerouslySetInnerHTML={{ __html: text || '' }}  // Render static HTML content
+          />
+        )}
       </Container>
     </Section>
   )
@@ -105,24 +117,8 @@ Paragraph.schema = {
     width: 'small',
     paddingTop: '0',
     paddingBottom: '0',
-    text: [
-      {
-        type: 'h2',
-        children: [
-          {
-            text: 'Lorem ipsum dolor sit title',
-          },
-        ],
-      },
-      {
-        type: 'paragraph',
-        children: [
-          {
-            text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc placerat sagittis faucibus.',
-          },
-        ],
-      },
-    ],
+    editable : true,
+    text: ''
   }),
   sideEditProps: [
     neutralBackgroundSideGroup,
